@@ -8,8 +8,8 @@
 import UIKit
 import SpringAnimation
 
-class ViewController: UIViewController {
-
+final class ViewController: UIViewController {
+    
     @IBOutlet var springView: SpringView!
     @IBOutlet var springLabel: SpringLabel!
     @IBOutlet var springButton: SpringButton!
@@ -21,16 +21,16 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         let _ = getRandomAnimate()
         
         springView.animation = "squeeze"
-        springView.duration = 1
+        springView.duration = 3
         springView.animate()
     }
-
+    
     @IBAction func pressButton(_ sender: SpringButton) {
-
+        
         let param = getRandomAnimate()
         
         sender.setTitle("Run \(param.1)", for: .normal)
@@ -49,7 +49,6 @@ class ViewController: UIViewController {
     }
     
     func getRandomAnimate() -> (
-        
         preset: String,
         curve: String,
         force: CGFloat,
@@ -60,7 +59,6 @@ class ViewController: UIViewController {
         scale: CGFloat,
         rotate: CGFloat
     ) {
-        
         let allPresets = AnimationPreset.allCases
         let randomIndexPreset = Int.random(in: 0..<allPresets.count)
         
@@ -86,7 +84,7 @@ class ViewController: UIViewController {
         let rotate  = CGFloat.random(in: -5...5)
         
         springLabel.text = "preset: \(preset.rawValue)\ncurve: \(curve.rawValue)\nforce: \(String(format: "%.2f", force))\nduration: \(String(format: "%.2f", duration))\ndelay: \(String(format: "%.2f", delay))\ndamping: \(String(format: "%.2f", damping))\nvelocity: \(String(format: "%.2f", velocity))\nscale: \(String(format: "%.2f", scale))\nrotate: \(String(format: "%.2f", rotate))  "
-
+        
         return (
             preset.rawValue,
             curve.rawValue,
