@@ -33,7 +33,7 @@ final class ViewController: UIViewController {
         
         let param = getRandomAnimate()
         
-        sender.setTitle("Run \(param.curve)", for: .normal)
+        sender.setTitle("Run \(param.preset)", for: .normal)
         
         springView.animation = param.preset
         springView.curve = param.curve
