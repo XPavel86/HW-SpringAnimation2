@@ -97,7 +97,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="springButton" destination="PT0-cE-oIE" id="yGI-DI-m0X"/>
+                        <outlet property="springButton" destination="PT0-cE-oIE" id="oMs-na-vxA"/>
                         <outlet property="springLabel" destination="9x4-Mv-cGx" id="iTb-8a-eh2"/>
                         <outlet property="springView" destination="6uA-Jk-aJK" id="nYz-Ii-Jne"/>
                     </connections>

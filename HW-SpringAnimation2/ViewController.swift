@@ -14,10 +14,10 @@ final class ViewController: UIViewController {
     @IBOutlet var springButton: SpringButton!
     
     struct Animate {
-        var preset: String = ""
-        var curve: String = ""
+        var preset: String = "squeeze"
+        var curve: String = "spring"
         var force: CGFloat = 0
-        var duration: CGFloat = 0
+        var duration: CGFloat = 3
         var delay: CGFloat = 0
         var damping: CGFloat = 0
         var velocity: CGFloat = 0
@@ -36,9 +36,9 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        springView.animation = "squeeze"
-        springView.curve = "spring"
-        springView.duration = 3
+        springView.animation = animate.preset
+        springView.curve = animate.curve
+        springView.duration = animate.duration
         springView.animate()
         
         updateLabel()
