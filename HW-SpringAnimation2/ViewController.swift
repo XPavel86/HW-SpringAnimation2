@@ -1,4 +1,3 @@
-//
 //  ViewController.swift
 //  HW_SpringAnimation
 //
@@ -22,7 +21,8 @@ final class ViewController: UIViewController {
         var delay: CGFloat
         var damping: CGFloat
         var velocity: CGFloat
-        var scale: CGFloat
+        var scaleX: CGFloat
+        var scaleY: CGFloat
         var rotate: CGFloat
     }
     
@@ -34,7 +34,8 @@ final class ViewController: UIViewController {
         delay: 0,
         damping: 0,
         velocity: 0,
-        scale: 0,
+        scaleX: 0,
+        scaleY: 0,
         rotate: 0
     )
     
@@ -45,7 +46,7 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         springView.animation = "squeeze"
         springView.curve = "spring"
         springView.duration = 3
@@ -57,7 +58,6 @@ final class ViewController: UIViewController {
     }
     
     @IBAction func pressButton(_ sender: SpringButton) {
-
         springView.animation = lastAnimate.preset
         springView.curve = lastAnimate.curve
         springView.force = lastAnimate.force
@@ -65,15 +65,15 @@ final class ViewController: UIViewController {
         springView.delay = lastAnimate.delay
         springView.damping = lastAnimate.damping
         springView.velocity = lastAnimate.velocity
-        springView.scaleX = lastAnimate.scale
-        springView.scaleY = lastAnimate.scale
+        springView.scaleX = lastAnimate.scaleX
+        springView.scaleY = lastAnimate.scaleY
         springView.rotate = lastAnimate.rotate
-        
         springView.animate()
-
+        
         updateLastAnimationData()
         
         lastAnimate = getRandomAnimate()
+        
         sender.setTitle("Run \(lastAnimate.preset)", for: .normal)
     }
     
@@ -91,7 +91,8 @@ final class ViewController: UIViewController {
         let delay = CGFloat.random(in: 0.5...1)
         let damping = CGFloat.random(in: 0...1)
         let velocity = CGFloat.random(in: 0...1)
-        let scale = CGFloat.random(in: 0...5)
+        let scaleX = CGFloat.random(in: 0...5)
+        let scaleY = CGFloat.random(in: 0...5)
         let rotate = CGFloat.random(in: -5...5)
         
         let animate = Animate(preset: preset,
@@ -101,25 +102,24 @@ final class ViewController: UIViewController {
                               delay: delay,
                               damping: damping,
                               velocity: velocity,
-                              scale: scale,
+                              scaleX: scaleX,
+                              scaleY: scaleY,
                               rotate: rotate)
         
         return animate
     }
     
     private func updateLastAnimationData() {
-        lastAnimate.preset = springView.animation
-        lastAnimate.curve = springView.curve
-        lastAnimate.force = springView.force
-        lastAnimate.duration = springView.duration
-        lastAnimate.delay = springView.delay
-        lastAnimate.damping = springView.damping
-        lastAnimate.velocity = springView.velocity
-        lastAnimate.scale = springView.scaleX
-        lastAnimate.rotate = springView.rotate
-        
-        springLabel.text = "preset: \(lastAnimate.preset)\ncurve: \(lastAnimate.curve)\nforce: \(String(format: "%.2f", lastAnimate.force))\nduration: \(String(format: "%.2f", lastAnimate.duration))\ndelay: \(String(format: "%.2f", lastAnimate.delay))\ndamping: \(String(format: "%.2f", lastAnimate.damping))\nvelocity: \(String(format: "%.2f", lastAnimate.velocity))\nscale: \(String(format: "%.2f", lastAnimate.scale))\nrotate: \(String(format: "%.2f", lastAnimate.rotate))"
+        springLabel.text = """
+                    preset: \(springView.animation)
+                    curve: \(springView.curve)
+                    force: \(String(format: "%.2f", springView.force))
+                    duration: \(String(format: "%.2f", springView.duration))
+                    delay: \(String(format: "%.2f", springView.delay))
+                    damping: \(String(format: "%.2f", springView.damping))
+                    velocity: \(String(format: "%.2f", springView.velocity))
+                    scale: \(String(format: "%.2f", springView.scaleX))
+                    rotate: \(String(format: "%.2f", springView.rotate))
+                    """
     }
 }
-
-
