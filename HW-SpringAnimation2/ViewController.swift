@@ -14,30 +14,19 @@ final class ViewController: UIViewController {
     @IBOutlet var springButton: SpringButton!
     
     struct Animate {
-        var preset: String
-        var curve: String
-        var force: CGFloat
-        var duration: CGFloat
-        var delay: CGFloat
-        var damping: CGFloat
-        var velocity: CGFloat
-        var scaleX: CGFloat
-        var scaleY: CGFloat
-        var rotate: CGFloat
+        var preset: String = ""
+        var curve: String = ""
+        var force: CGFloat = 0
+        var duration: CGFloat = 0
+        var delay: CGFloat = 0
+        var damping: CGFloat = 0
+        var velocity: CGFloat = 0
+        var scaleX: CGFloat = 0
+        var scaleY: CGFloat = 0
+        var rotate: CGFloat = 0
     }
-    
-    var lastAnimate = Animate(
-        preset: "",
-        curve: "",
-        force: 0,
-        duration: 0,
-        delay: 0,
-        damping: 0,
-        velocity: 0,
-        scaleX: 0,
-        scaleY: 0,
-        rotate: 0
-    )
+
+    private var animate = Animate()
     
     override func viewWillLayoutSubviews() {
         springView.layer.cornerRadius = 10
@@ -52,32 +41,32 @@ final class ViewController: UIViewController {
         springView.duration = 3
         springView.animate()
         
-        updateLastAnimationData()
+        updateLabel()
         
-        lastAnimate = getRandomAnimate()
+        animate = getRandomAnimate()
     }
     
     @IBAction func pressButton(_ sender: SpringButton) {
-        springView.animation = lastAnimate.preset
-        springView.curve = lastAnimate.curve
-        springView.force = lastAnimate.force
-        springView.duration = lastAnimate.duration
-        springView.delay = lastAnimate.delay
-        springView.damping = lastAnimate.damping
-        springView.velocity = lastAnimate.velocity
-        springView.scaleX = lastAnimate.scaleX
-        springView.scaleY = lastAnimate.scaleY
-        springView.rotate = lastAnimate.rotate
+        springView.animation = animate.preset
+        springView.curve = animate.curve
+        springView.force = animate.force
+        springView.duration = animate.duration
+        springView.delay = animate.delay
+        springView.damping = animate.damping
+        springView.velocity = animate.velocity
+        springView.scaleX = animate.scaleX
+        springView.scaleY = animate.scaleY
+        springView.rotate = animate.rotate
         springView.animate()
         
-        updateLastAnimationData()
+        updateLabel()
         
-        lastAnimate = getRandomAnimate()
+        animate = getRandomAnimate()
         
-        sender.setTitle("Run \(lastAnimate.preset)", for: .normal)
+        sender.setTitle("Run \(animate.preset)", for: .normal)
     }
     
-    func getRandomAnimate() -> Animate {
+    private func getRandomAnimate() -> Animate {
         let allPresets = AnimationPreset.allCases
         let randomIndexPreset = Int.random(in: 0..<allPresets.count)
         let preset = allPresets[randomIndexPreset].rawValue
@@ -86,7 +75,7 @@ final class ViewController: UIViewController {
         let randomIndexCurve = Int.random(in: 0..<allCurves.count)
         let curve = allCurves[randomIndexCurve].rawValue
         
-        let force = CGFloat.random(in: 1...7)
+        let force = CGFloat.random(in: 0.5...3)
         let duration = CGFloat.random(in: 0.5...3)
         let delay = CGFloat.random(in: 0.5...1)
         let damping = CGFloat.random(in: 0...1)
@@ -109,7 +98,7 @@ final class ViewController: UIViewController {
         return animate
     }
     
-    private func updateLastAnimationData() {
+    private func updateLabel() {
         springLabel.text = """
                     preset: \(springView.animation)
                     curve: \(springView.curve)
