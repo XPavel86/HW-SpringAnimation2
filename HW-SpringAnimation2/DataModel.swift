@@ -11,14 +11,14 @@ import SpringAnimation
 struct Animate {
     var preset: String = "squeeze"
     var curve: String = "spring"
-    var force: CGFloat = 0
-    var duration: CGFloat = 3
-    var delay: CGFloat = 0
-    var damping: CGFloat = 0
-    var velocity: CGFloat = 0
-    var scaleX: CGFloat = 0
-    var scaleY: CGFloat = 0
-    var rotate: CGFloat = 0
+    var force: Double = 0
+    var duration: Double = 3
+    var delay: Double = 0
+    var damping: Double = 0
+    var velocity: Double = 0
+    var scaleX: Double = 0
+    var scaleY: Double = 0
+    var rotate: Double = 0
     
     func getRandomAnimate() -> Animate {
        let allPresets = AnimationPreset.allCases
@@ -29,14 +29,14 @@ struct Animate {
        let randomIndexCurve = Int.random(in: 0..<allCurves.count)
        let curve = allCurves[randomIndexCurve].rawValue
        
-       let force = CGFloat.random(in: 0.5...3)
-       let duration = CGFloat.random(in: 0.5...3)
-       let delay = CGFloat.random(in: 0.5...1)
-       let damping = CGFloat.random(in: 0...1)
-       let velocity = CGFloat.random(in: 0...1)
-       let scaleX = CGFloat.random(in: 0...5)
-       let scaleY = CGFloat.random(in: 0...5)
-       let rotate = CGFloat.random(in: -5...5)
+       let force = Double.random(in: 0.5...3)
+       let duration = Double.random(in: 0.5...3)
+       let delay = Double.random(in: 0.5...1)
+       let damping = Double.random(in: 0...1)
+       let velocity = Double.random(in: 0...1)
+       let scaleX = Double.random(in: 0...5)
+       let scaleY = Double.random(in: 0...5)
+       let rotate = Double.random(in: -5...5)
        
        let animate = Animate(preset: preset,
                              curve: curve,
