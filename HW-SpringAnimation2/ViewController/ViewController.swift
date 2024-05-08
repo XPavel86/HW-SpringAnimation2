@@ -9,6 +9,7 @@ import SpringAnimation
 
 final class ViewController: UIViewController {
     
+    // MARK: - IB Outlets
     @IBOutlet var springView: SpringView!
     @IBOutlet var label: UILabel!
     @IBOutlet var button: UIButton!
@@ -24,11 +25,12 @@ final class ViewController: UIViewController {
         springView.duration = animate.duration
         springView.animate()
         
-        updateLabel()
+        label.text = animate.description
         
         animate = Animate.randomAnimation
     }
     
+    // MARK: - IB Actions
     @IBAction func pressButton(_ sender: SpringButton) {
         springView.animation = animate.preset
         springView.curve = animate.curve
@@ -42,14 +44,10 @@ final class ViewController: UIViewController {
         springView.rotate = animate.rotate
         springView.animate()
         
-        updateLabel()
+        label.text = animate.description
         
         animate = Animate.randomAnimation
         
         sender.setTitle("Run \(animate.preset)", for: .normal)
-    }
-    
-    private func updateLabel() {
-        label.text = animate.description
     }
 }

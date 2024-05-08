@@ -36,8 +36,8 @@ struct Animate {
     
     static var randomAnimation: Animate {
         Animate (
-            preset: DataStore.AnimationPreset.allCases.randomElement()?.rawValue ?? "squeeze",
-            curve: DataStore.AnimationCurve.allCases.randomElement()?.rawValue ?? "spring",
+            preset: DataStore.shared.animationPreset.randomElement()?.rawValue ?? "squeeze",
+            curve: DataStore.shared.animationCurve.randomElement()?.rawValue ?? "spring",
             force: Double.random(in: 0.5...3),
             duration: Double.random(in: 0.5...3),
             delay: Double.random(in: 0.5...1),
