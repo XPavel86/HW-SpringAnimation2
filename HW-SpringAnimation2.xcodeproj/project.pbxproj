@@ -15,6 +15,7 @@
 		EF9640F92BD46F23004EF0D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF9640F72BD46F23004EF0D7 /* LaunchScreen.storyboard */; };
 		EF9641022BD46F46004EF0D7 /* SpringAnimation in Frameworks */ = {isa = PBXBuildFile; productRef = EF9641012BD46F46004EF0D7 /* SpringAnimation */; };
 		EFC7E4C72BD5766A00D3FA3C /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC7E4C62BD5766A00D3FA3C /* DataModel.swift */; };
+		EFF6F57E2BEB69E5002A1206 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF6F57D2BEB69E5002A1206 /* Services.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		EF9640F82BD46F23004EF0D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF9640FA2BD46F23004EF0D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFC7E4C62BD5766A00D3FA3C /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		EFF6F57D2BEB69E5002A1206 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				EF9640EE2BD46F21004EF0D7 /* SceneDelegate.swift */,
 				EF9640F02BD46F21004EF0D7 /* ViewController.swift */,
 				EFC7E4C62BD5766A00D3FA3C /* DataModel.swift */,
+				EFF6F57D2BEB69E5002A1206 /* Services.swift */,
 				EF9640F22BD46F21004EF0D7 /* Main.storyboard */,
 				EF9640F52BD46F23004EF0D7 /* Assets.xcassets */,
 				EF9640F72BD46F23004EF0D7 /* LaunchScreen.storyboard */,
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFF6F57E2BEB69E5002A1206 /* Services.swift in Sources */,
 				EF9640F12BD46F21004EF0D7 /* ViewController.swift in Sources */,
 				EFC7E4C72BD5766A00D3FA3C /* DataModel.swift in Sources */,
 				EF9640ED2BD46F21004EF0D7 /* AppDelegate.swift in Sources */,

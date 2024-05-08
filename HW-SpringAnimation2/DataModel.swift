@@ -5,19 +5,7 @@
 //  Created by Pavel Dolgopolov on 21.04.2024.
 //
 
-import SpringAnimation
-
-struct Animate {
-    var preset: String = "squeeze"
-    var curve: String = "spring"
-    var force: Double = 0
-    var duration: Double = 3
-    var delay: Double = 0
-    var damping: Double = 0
-    var velocity: Double = 0
-    var scaleX: Double = 0
-    var scaleY: Double = 0
-    var rotate: Double = 0
+struct DataModel {
     
     func getRandomAnimate() -> Animate {
        let allPresets = AnimationPreset.allCases

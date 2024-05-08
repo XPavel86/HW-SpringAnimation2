@@ -25,7 +25,7 @@ final class ViewController: UIViewController {
         
         updateLabel()
         
-        animate = Animate().getRandomAnimate()
+        animate = DataModel().getRandomAnimate()
     }
     
     @IBAction func pressButton(_ sender: SpringButton) {
@@ -43,7 +43,7 @@ final class ViewController: UIViewController {
         
         updateLabel()
         
-        animate = Animate().getRandomAnimate()
+        animate = DataModel().getRandomAnimate()
         
         sender.setTitle("Run \(animate.preset)", for: .normal)
     }
