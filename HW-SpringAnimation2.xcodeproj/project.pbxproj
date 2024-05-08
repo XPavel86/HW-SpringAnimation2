@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF5508662BEB94CC00B9E740 /* SpringAnimation in Frameworks */ = {isa = PBXBuildFile; productRef = EF5508652BEB94CC00B9E740 /* SpringAnimation */; };
 		EF9640ED2BD46F21004EF0D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9640EC2BD46F21004EF0D7 /* AppDelegate.swift */; };
 		EF9640EF2BD46F21004EF0D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9640EE2BD46F21004EF0D7 /* SceneDelegate.swift */; };
 		EF9640F12BD46F21004EF0D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9640F02BD46F21004EF0D7 /* ViewController.swift */; };
 		EF9640F42BD46F21004EF0D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF9640F22BD46F21004EF0D7 /* Main.storyboard */; };
 		EF9640F62BD46F23004EF0D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF9640F52BD46F23004EF0D7 /* Assets.xcassets */; };
 		EF9640F92BD46F23004EF0D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF9640F72BD46F23004EF0D7 /* LaunchScreen.storyboard */; };
-		EF9641022BD46F46004EF0D7 /* SpringAnimation in Frameworks */ = {isa = PBXBuildFile; productRef = EF9641012BD46F46004EF0D7 /* SpringAnimation */; };
 		EFC7E4C72BD5766A00D3FA3C /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC7E4C62BD5766A00D3FA3C /* Animation.swift */; };
 		EFF6F57E2BEB69E5002A1206 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF6F57D2BEB69E5002A1206 /* Services.swift */; };
 /* End PBXBuildFile section */
@@ -36,7 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF9641022BD46F46004EF0D7 /* SpringAnimation in Frameworks */,
+				EF5508662BEB94CC00B9E740 /* SpringAnimation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,7 +132,7 @@
 			);
 			name = "HW-SpringAnimation2";
 			packageProductDependencies = (
-				EF9641012BD46F46004EF0D7 /* SpringAnimation */,
+				EF5508652BEB94CC00B9E740 /* SpringAnimation */,
 			);
 			productName = "HW-SpringAnimation2";
 			productReference = EF9640E92BD46F21004EF0D7 /* HW-SpringAnimation2.app */;
@@ -442,7 +442,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EF9641012BD46F46004EF0D7 /* SpringAnimation */ = {
+		EF5508652BEB94CC00B9E740 /* SpringAnimation */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EF9641002BD46F46004EF0D7 /* XCRemoteSwiftPackageReference "SpringAnimation" */;
 			productName = SpringAnimation;

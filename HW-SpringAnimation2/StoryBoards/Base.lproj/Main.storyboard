@@ -41,7 +41,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PT0-cE-oIE" customClass="SpringButton" customModule="SpringAnimation">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PT0-cE-oIE">
                                 <rect key="frame" x="76" y="482.5" width="168" height="34"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -54,7 +54,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="pressButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="85U-GJ-yYZ"/>
+                                    <action selector="pressButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nPI-Jm-Di1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -71,7 +71,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="button" destination="PT0-cE-oIE" id="oMs-na-vxA"/>
                         <outlet property="label" destination="9x4-Mv-cGx" id="iTb-8a-eh2"/>
                         <outlet property="springView" destination="6uA-Jk-aJK" id="nYz-Ii-Jne"/>
                     </connections>

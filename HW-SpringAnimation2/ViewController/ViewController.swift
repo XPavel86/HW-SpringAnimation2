@@ -12,17 +12,17 @@ final class ViewController: UIViewController {
     // MARK: - IB Outlets
     @IBOutlet var springView: SpringView!
     @IBOutlet var label: UILabel!
-    @IBOutlet var button: UIButton!
     
     // MARK: - Private properties
     private var animate = Animate.randomAnimation
     
+    // MARK: - Initializers
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        springView.animation = animate.preset
-        springView.curve = animate.curve
-        springView.duration = animate.duration
+        springView.animation = "squeeze"
+        springView.curve = "spring"
+        springView.duration = 2.0
         springView.animate()
         
         label.text = animate.description
@@ -31,7 +31,7 @@ final class ViewController: UIViewController {
     }
     
     // MARK: - IB Actions
-    @IBAction func pressButton(_ sender: SpringButton) {
+    @IBAction func pressButton(_ sender: UIButton) {
         springView.animation = animate.preset
         springView.curve = animate.curve
         springView.force = animate.force
