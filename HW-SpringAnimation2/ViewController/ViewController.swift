@@ -10,11 +10,12 @@ import SpringAnimation
 final class ViewController: UIViewController {
     
     @IBOutlet var springView: SpringView!
-    @IBOutlet var springLabel: SpringLabel!
-    @IBOutlet var springButton: SpringButton!
-
-    private var animate = Animate()
-
+    @IBOutlet var label: UILabel!
+    @IBOutlet var button: UIButton!
+    
+    // MARK: - Private properties
+    private var animate = Animate.randomAnimation
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,7 +26,7 @@ final class ViewController: UIViewController {
         
         updateLabel()
         
-        animate = DataModel().getRandomAnimate()
+        animate = Animate.randomAnimation
     }
     
     @IBAction func pressButton(_ sender: SpringButton) {
@@ -43,22 +44,12 @@ final class ViewController: UIViewController {
         
         updateLabel()
         
-        animate = DataModel().getRandomAnimate()
+        animate = Animate.randomAnimation
         
         sender.setTitle("Run \(animate.preset)", for: .normal)
     }
     
     private func updateLabel() {
-        springLabel.text = """
-                    preset: \(springView.animation)
-                    curve: \(springView.curve)
-                    force: \(String(format: "%.2f", springView.force))
-                    duration: \(String(format: "%.2f", springView.duration))
-                    delay: \(String(format: "%.2f", springView.delay))
-                    damping: \(String(format: "%.2f", springView.damping))
-                    velocity: \(String(format: "%.2f", springView.velocity))
-                    scale: \(String(format: "%.2f", springView.scaleX))
-                    rotate: \(String(format: "%.2f", springView.rotate))
-                    """
+        label.text = animate.description
     }
 }
