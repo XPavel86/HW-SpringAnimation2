@@ -9,7 +9,7 @@ import Foundation
 
 struct Animate {
     
-    let preset: String
+    let animation: String
     let curve: String
     let force: Double
     let duration: Double
@@ -22,7 +22,7 @@ struct Animate {
     
     var description: String {
         return """
-            preset: \(preset),
+            preset: \(animation),
             curve: \(curve),
             force: \(String(format: "%.2f", force)),
             duration: \(String(format: "%.2f", duration)),
@@ -36,7 +36,7 @@ struct Animate {
     
     static var randomAnimation: Animate {
         Animate (
-            preset: DataStore.shared.animationPreset.randomElement()?.rawValue ?? "squeeze",
+            animation: DataStore.shared.animationPreset.randomElement()?.rawValue ?? "squeeze",
             curve: DataStore.shared.animationCurve.randomElement()?.rawValue ?? "spring",
             force: Double.random(in: 0.5...3),
             duration: Double.random(in: 0.5...3),

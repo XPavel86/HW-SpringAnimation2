@@ -1,0 +1,12 @@
+
+//Вариант без множественного присваивания
+//
+        for case let (key?, value) in Mirror(reflecting: animate).children {
+            if let doubleValue = value as? Double {
+                springView.setValue(doubleValue, forKey: key)
+            } else {
+                if let stringValue = value as? String {
+                    springView.setValue(stringValue, forKey: key)
+                }
+            }
+        }

@@ -32,7 +32,7 @@ final class ViewController: UIViewController {
     
     // MARK: - IB Actions
     @IBAction func pressButton(_ sender: UIButton) {
-        springView.animation = animate.preset
+        springView.animation = animate.animation
         springView.curve = animate.curve
         springView.force = animate.force
         springView.duration = animate.duration
@@ -48,6 +48,6 @@ final class ViewController: UIViewController {
         
         animate = Animate.randomAnimation
         
-        sender.setTitle("Run \(animate.preset)", for: .normal)
+        sender.setTitle("Run \(animate.animation)", for: .normal)
     }
 }
